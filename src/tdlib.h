@@ -1,5 +1,6 @@
 /*
  * tdlib.h
+ * This file is part of the c_td project.
  *
  *  Created on: Jan 7, 2016
  *      Author: theophile
