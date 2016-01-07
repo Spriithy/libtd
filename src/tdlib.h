@@ -8,11 +8,6 @@
 #ifndef _SRC_TDLIB_H_
 #define _SRC_TDLIB_H_
 
-/* define our custom EOL (end of line) macro */
-#ifndef EOF
-#define EOL -1
-#endif
-
 typedef unsigned long	size_t;
 
 /* memory management functions */
