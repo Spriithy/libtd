@@ -39,7 +39,7 @@ typedef unsigned long	size_t;
 
 /* memory management functions */
 void	*td_memset	(void *ptr, int c, size_t count);
-void	*td_bzero	(void *ptr, size_t count);
+void	td_bzero	(void *ptr, size_t count);
 void	*td_memcpy	(void *dst, const void *src, size_t count);
 void	*td_memccpy	(void *dst, const void *src, int c, size_t count);
 void	*td_memmove	(void *dst, const void *src, size_t count);

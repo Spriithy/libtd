@@ -36,18 +36,50 @@
 #ifndef _SRC_TDCTYPE_H_
 #define	_SRC_TDCTYPE_H_
 
-#undef	isalpha	(c)
-#undef	isalnum	(c)
-#undef	isascii	(c)
-#undef	isprint	(c)
-#undef	toupper	(c)
-#undef	tolower	(c)
+#undef 	digittoint	(c);
+#undef 	isalnum 	(c);
+#undef 	isalpha 	(c);
+#undef 	isascii 	(c);
+#undef 	iscntrl 	(c);
+#undef 	isdigit 	(c);
+#undef 	isgraph 	(c);
+#undef 	ishexnumber	(c);
+#undef 	isideogram	(c);
+#undef 	islower 	(c);
+#undef 	isnumber 	(c);
+#undef 	isphonogram	(c);
+#undef 	isspecial	(c);
+#undef 	isprint 	(c);
+#undef 	ispunct 	(c);
+#undef 	isrune  	(c);
+#undef 	isspace 	(c);
+#undef 	isupper 	(c);
+#undef 	isxdigit	(c);
+#undef 	toascii 	(c);
+#undef 	tolower 	(c);
+#undef	toupper 	(c);
 
-int 	isalpha	(int c);
-int 	isalnum	(int c);
-int 	isascii	(int c);
-int 	isprint	(int c);
-int 	toupper	(int c);
-int 	tolower	(int c);
+int 	digittoint	(int c);
+int 	isalnum 	(int c);
+int 	isalpha 	(int c);
+int 	isascii 	(int c);
+int 	iscntrl 	(int c);
+int 	isdigit 	(int c);
+int 	isgraph 	(int c);
+int 	ishexnumber	(int c);
+int 	isideogram	(int c);
+int 	islower 	(int c);
+int 	isnumber 	(int c);
+int 	isphonogram	(int c);
+int 	isspecial	(int c);
+int 	isprint 	(int c);
+int 	ispunct 	(int c);
+int 	isrune  	(int c);
+int 	isspace 	(int c);
+int 	isupper 	(int c);
+int 	isxdigit	(int c);
+int 	toascii 	(int c);
+int 	tolower 	(int c);
+int 	toupper 	(int c);
 
 #endif /* _SRC_TDCTYPE_H_ */

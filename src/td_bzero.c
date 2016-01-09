@@ -26,20 +26,21 @@
  *
  *  Created on: Jan 7, 2016
  *      Author: theophile
+ *
+ * This is the td_bzero implementation that zeroes a chunk of memory to be zero.
+ * The block size must already be owned (malloc, calloc ...) and count must not
+ * exceed its length.
  */
 
 #include "tdstring.h"
 
-void*
+#define BZ0_VAL 0
+
+void
 td_bzero (ptr, count)
 	void	*ptr;
 	size_t	count;
 {
-		void	*start;
-
-		start = ptr;
-		while (count--)
-			*(unsigned char *) ptr++ = 0;
-
-		return (start);
+		while (count-- > 0)
+			*(unsigned char *) ptr++ = BZ0_VAL;
 }
