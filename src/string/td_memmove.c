@@ -21,33 +21,33 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- * main.c
+ * td_memmove.c
  * This file is part of the td_libc project.
  *
- *  Created on: Jan 7, 2016
+ *  Created on: 9 janv. 2016
  *      Author: theophile
  */
-#include "../include/tdstring.h"
-#include "../include/tdstrings.h"
-#include <stdio.h>
 
-int
-main (void)
+#include "../../include/tdstring.h"
+
+void *
+td_memmove (dst, src, count)
+	void		*dst;
+	const void 	*src;
+	size_t		count;
 {
-	char source[] = "once upon a midnight dreary...", dest[11];
-	td_memset(source, 104, 4);
-	td_bcopy(source, dest, 10);
-	dest[10] = '\0';
-	printf("<%s>\n", dest);
-	printf("%d\n", td_bcmp(source, dest, 10));
-	printf("%d\n", td_strlen("foo"));
+	unsigned char		*d;
+	const unsigned char	*s;
 
-	char dst[] = "oldstring";
-	const char src[]  = "newstring";
+	if (count == 0 || dst == src) goto end;
 
-	printf("Before memmove dst = %s, src = %s\n", dst, src);
-	td_memmove(dst, src, 9);
-	printf("After memmove dst = %s, src = %s\n", dst, src);
+	/* copy backwards, from end to beginning */
+	d = dst + count;
+	s = src + count;
 
-	return (0);
+	/* Simple, byte oriented memmove. */
+	while (count-- > 0)
+		*--d = *--s;
+
+	end:	return (dst);
 }

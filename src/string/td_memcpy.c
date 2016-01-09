@@ -32,7 +32,7 @@
 #include "../../include/tdstring.h"
 #include "../../include/tdstrings.h"
 
-void*
+void *
 td_memcpy (dst, src, count)
 	void		*dst;
 	const void	*src;

@@ -28,10 +28,9 @@
  *      Author: theophile
  */
 
-#include "../../include/tdassert.h"
 #include "../../include/tdstring.h"
 
-void*
+void *
 td_memset (ptr, c, count)
 	void	*ptr;
 	int	c;
@@ -40,8 +39,7 @@ td_memset (ptr, c, count)
 	void	*start;
 
 	start = ptr;
-	td_assert((c >= 0) && (c <= 255));
-	while (count--)
+	while (count-- > 0)
 		*(unsigned char *) ptr++ = (unsigned char) c;
 
 	return (start);

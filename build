@@ -1,1 +1,1 @@
-clang -std=c99 -Wall -Wextra src/*.c -o ctd
+clang -std=c99 -Wall -Wextra src/*.c src/*/*.c -o ctd

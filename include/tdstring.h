@@ -28,8 +28,8 @@
  *      Author: theophile
  */
 
-#ifndef _SRC_TDLIB_H_
-#define _SRC_TDLIB_H_
+#ifndef _TDSTRING_H_
+#define _TDSTRING_H_
 
 #ifdef	TD_NULL
 # undef	TD_NULL
@@ -74,4 +74,4 @@ char	*td_strnstr	(const char *big, const char *little, size_t len);
 int 	 td_strcmp	(const char *s1, const char *s2);
 int 	 td_strncmp	(const char *s1, const char *s2, size_t n);
 
-#endif /* _SRC_TDLIB_H_ */
+#endif /* _TDSTRING_H_ */
