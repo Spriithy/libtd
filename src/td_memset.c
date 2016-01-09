@@ -34,7 +34,7 @@
 void*
 td_memset (ptr, c, count)
 	void	*ptr;
-	int		c;
+	int 	c;
 	size_t 	count;
 {
 		td_assert((c >= 0) && (c <= 255)); /* valid int as unsigned char ? */

@@ -44,9 +44,9 @@
 #undef __td_assert
 
 #define td_assert(e)  \
-    ((void) ((e) ? 0 : __td_assert (#e, __FILE__, __LINE__)))
+	((void) ((e) ? 0 : __td_assert (#e, __FILE__, __LINE__)))
 
 #define __td_assert(e, file, line) \
-    ((void)printf ("%s:%u: failed assertion `%s'\n", file, line, e), abort())
+	((void)printf ("%s:%u: failed assertion `%s'\n", file, line, e), abort())
 
 #endif /* _SRC_TDASSERT_H_ */
