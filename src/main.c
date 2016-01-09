@@ -31,49 +31,54 @@
 #include "../include/tdstrings.h"
 #include <stdio.h>
 
-void demo(const char* lhs, const char* rhs, size_t sz)
+void
+demo (const char* lhs, const char* rhs, size_t sz)
 {
-	for(size_t n = 0; n < sz; ++n) putchar(lhs[n]);
-	int rc = td_memcmp(lhs, rhs, sz);
-	if(rc == 0)
-		printf(" compares equal to ");
-	else if(rc < 0)
-		printf(" precedes ");
-	else if(rc > 0)
-		printf(" follows ");
-	for(size_t n = 0; n < sz; ++n) putchar(rhs[n]);
-		puts(" in lexicographical order");
+	for (size_t n = 0; n < sz; ++n)
+		putchar (lhs[n]);
+	int rc = td_memcmp (lhs, rhs, sz);
+	if (rc == 0)
+	printf (" compares equal to ");
+	else if (rc < 0)
+	printf (" precedes ");
+	else if (rc > 0)
+		printf (" follows ");
+	for (size_t n = 0; n < sz; ++n)
+		putchar (rhs[n]);
+	puts (" in lexicographical order");
 }
 
 int
 main (void)
 {
 	char source[] = "once upon a midnight dreary...", dest[11];
-	td_memset(source, 104, 4);
-	td_bcopy(source, dest, 10);
+	td_memset (source, 104, 4);
+	td_bcopy (source, dest, 10);
 	dest[10] = '\0';
-	printf("<%s>\n", dest);
-	printf("%d\n", td_bcmp(source, dest, 10));
-	printf("%d\n", td_strlen("foo bar baz"));
+	printf ("<%s>\n", dest);
+	printf ("%d\n", td_bcmp (source, dest, 10));
+	printf ("%d\n", td_strlen ("foo bar baz"));
 
 	char dst[] = "oldstring";
-	const char src[]  = "newstring";
-	printf("Before memmove dst = %s, src = %s\n", dst, src);
-	td_memmove(dst, src, 9);
-	printf("After memmove dst = %s, src = %s\n", dst, src);
+	const char src[] = "newstring";
+	printf ("Before memmove dst = %s, src = %s\n", dst, src);
+	td_memmove (dst, src, 9);
+	printf ("After memmove dst = %s, src = %s\n", dst, src);
 
 	char str[] = "ABCDEFG";
-	char *ps = td_memchr(str,'D',td_strlen(str));
+	char *ps = td_memchr (str, 'D', td_strlen (str));
 	if (ps != NULL)
-		printf ("search character found:  %s\n", ps);
+	printf ("search character found:  %s\n", ps);
 	else
-		printf ("search character not found\n");
+	printf ("search character not found\n");
 
-	char a1[] = {'a','b','c'};
-	char a2[sizeof a1] = {'a','b','d'};
-	demo(a1, a2, sizeof a1);
-	demo(a2, a1, sizeof a1);
-	demo(a1, a1, sizeof a1);
+	char a1[] =
+		{ 'a', 'b', 'c' };
+	char a2[sizeof a1] =
+		{ 'a', 'b', 'd' };
+	demo (a1, a2, sizeof a1);
+	demo (a2, a1, sizeof a1);
+	demo (a1, a1, sizeof a1);
 
 	return (0);
 }
