@@ -21,18 +21,32 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- * main.c
+ * tdassert.h
  * This file is part of the c_td project.
  *
- *  Created on: Jan 7, 2016
- *      Author: theophile
+ *  Created on: 8 Jan 2016
+ *      Author: Theophile
+ *
+ * This is a naive approach of an "assert" macro.
+ *
+ * TODO : implement td_printf, and use it here
+ *
  */
-#include "tdstring.h"
 
-int
-main (void)
-{
-	char source[] = "once upon a midnight dreary...";
-	td_memset(source, 104, 4);
-	puts(source);
-}
+#ifndef _SRC_TDASSERT_H_
+#define _SRC_TDASSERT_H_
+
+/* TODO : please get rid of it asap */
+#include <stdio.h>
+#include <stdlib.h>
+
+#undef td_assert
+#undef __td_assert
+
+#define td_assert(e)  \
+    ((void) ((e) ? 0 : __td_assert (#e, __FILE__, __LINE__)))
+
+#define __td_assert(e, file, line) \
+    ((void)printf ("%s:%u: failed assertion `%s'\n", file, line, e), abort())
+
+#endif /* _SRC_TDASSERT_H_ */
