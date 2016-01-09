@@ -56,7 +56,6 @@ int 	 td_memcmp	(const void *s1, const void *s2, size_t count);
 /* string related functions */
 
 size_t	 td_strlen   	(const char *s);
-size_t	 td_strnlen  	(const char *s, size_t maxlen);
 char	*td_strdup  	(const char *s);
 char	*td_strndup 	(const char *s, size_t n);
 char	*td_stpcpy  	(char *dst, const char *src);

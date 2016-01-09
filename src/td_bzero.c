@@ -38,8 +38,8 @@
 
 void
 td_bzero (ptr, count)
-	void	*ptr;
-	size_t	count;
+		void	*ptr;
+		size_t	count;
 {
 		while (count-- > 0)
 			*(unsigned char *) ptr++ = BZ0_VAL;
