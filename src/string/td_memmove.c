@@ -39,13 +39,9 @@ td_memmove (dst, src, count)
 	unsigned char		*d;
 	const unsigned char	*s;
 
-	if (count == 0 || dst == src) goto end;
-
-	/* copy backwards, from end to beginning */
 	d = dst + count;
 	s = src + count;
-
-	/* Simple, byte oriented memmove. */
+	if (count == 0 || d == s) goto end;
 	while (count-- > 0)
 		*--d = *--s;
 
