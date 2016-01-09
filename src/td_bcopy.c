@@ -33,7 +33,7 @@
 void
 td_bcopy (src, dst, n)
 	const void	*src;
-	void	*dst;
+	void		*dst;
 	size_t		n;
 {
 		while (n-- > 0)
