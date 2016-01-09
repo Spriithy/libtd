@@ -21,23 +21,26 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- * td_memcpy.c
+ * td_bzero.c
  * This file is part of the td_libc project.
  *
- *  Created on: Jan 8, 2016
+ *  Created on: Jan 7, 2016
  *      Author: theophile
  *
+ * This is the td_bzero implementation that zeroes a chunk of memory to be zero.
+ * The block size must already be owned (malloc, calloc ...) and count must not
+ * exceed its length.
  */
 
-#include "../include/tdstring.h"
-#include "../include/tdstrings.h"
+#include "../../include/tdstrings.h"
 
-void*
-td_memcpy (dst, src, count)
-	void		*dst;
-	const void	*src;
-	size_t		count;
+#define BZ0_VAL 0
+
+void
+td_bzero (ptr, count)
+	void	*ptr;
+	size_t	count;
 {
-		td_bcopy (src, dst, count);
-		return (dst);
+	while (count-- > 0)
+		*(unsigned char *) ptr++ = BZ0_VAL;
 }

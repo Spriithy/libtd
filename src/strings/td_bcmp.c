@@ -21,24 +21,22 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- * td_strlen.c
+ * td_bcmp.c
  * This file is part of the td_libc project.
  *
  *  Created on: 9 janv. 2016
  *      Author: theophile
  */
 
-#include "../include/tdstring.h"
+#include "../../include/tdstrings.h"
 
-size_t
-td_strlen (s)
-	const char	*s;
+int
+td_bcmp (s1, s2, n)
+	const void	*s1, *s2;
+	size_t		n;
 {
-	size_t	len;
+	while (n-- > 0)
+		if (*(unsigned char *) s1++ != *(unsigned char *) s2++) return (1);
 
-	len = 0;
-	while (*s++)
-		len++;
-
-	return (len);
+	return (0);
 }

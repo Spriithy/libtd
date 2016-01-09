@@ -21,21 +21,23 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- * td_bcopy.c
+ * td_memcpy.c
  * This file is part of the td_libc project.
  *
- *  Created on: 9 janv. 2016
+ *  Created on: Jan 8, 2016
  *      Author: theophile
+ *
  */
 
-#include "../include/tdstrings.h"
+#include "../../include/tdstring.h"
+#include "../../include/tdstrings.h"
 
-void
-td_bcopy (src, dst, n)
-	const void	*src;
+void*
+td_memcpy (dst, src, count)
 	void		*dst;
-	size_t		n;
+	const void	*src;
+	size_t		count;
 {
-	while (n-- > 0)
-		*(unsigned char *) dst++ = *(unsigned char *) src++;
+		td_bcopy (src, dst, count);
+		return (dst);
 }

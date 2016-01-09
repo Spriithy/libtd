@@ -21,22 +21,15 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- * td_bcmp.c
+ * tdmath.h
  * This file is part of the td_libc project.
  *
  *  Created on: 9 janv. 2016
  *      Author: theophile
  */
+#ifndef _TDMATH_C_
+#define _TDMATH_C_
 
-#include "../include/tdstrings.h"
+int	td_abs	(int i);
 
-int
-td_bcmp (s1, s2, n)
-	const void	*s1, *s2;
-	size_t		n;
-{
-	while (n-- > 0)
-		if (*(unsigned char *) s1++ != *(unsigned char *) s2++) return (1);
-
-	return (0);
-}
+#endif /* _TDMATH_C_ */

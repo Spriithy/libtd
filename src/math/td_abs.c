@@ -21,26 +21,19 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- * td_bzero.c
+ * td_abs.c
  * This file is part of the td_libc project.
  *
- *  Created on: Jan 7, 2016
+ *  Created on: 9 janv. 2016
  *      Author: theophile
- *
- * This is the td_bzero implementation that zeroes a chunk of memory to be zero.
- * The block size must already be owned (malloc, calloc ...) and count must not
- * exceed its length.
  */
 
-#include "../include/tdstrings.h"
 
-#define BZ0_VAL 0
+#include "../../include/tdmath.h"
 
-void
-td_bzero (ptr, count)
-	void	*ptr;
-	size_t	count;
+int
+td_abs (i)
+	int i;
 {
-	while (count-- > 0)
-		*(unsigned char *) ptr++ = BZ0_VAL;
+	return ((i < 0) ? -i : i);
 }
