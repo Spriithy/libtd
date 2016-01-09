@@ -27,12 +27,18 @@
  *  Created on: Jan 7, 2016
  *      Author: theophile
  */
-#include "tdstring.h"
+#include "../include/tdstring.h"
+#include "../include/tdstrings.h"
+#include <stdio.h>
 
 int
 main (void)
 {
-	char source[] = "once upon a midnight dreary...";
+	char source[] = "once upon a midnight dreary...", dest[11];
 	td_memset(source, 104, 4);
-	puts(source);
+	td_bcopy(source, dest, 10);
+	dest[10] = '\0';
+	printf("<%s>\n", dest);
+	printf("%d\n", td_bcmp(source, dest, 10));
+	return (0);
 }

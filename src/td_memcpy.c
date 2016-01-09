@@ -29,7 +29,8 @@
  *
  */
 
-#include "tdstring.h"
+#include "../include/tdstring.h"
+#include "../include/tdstrings.h"
 
 void*
 td_memcpy (dst, src, count)
@@ -37,10 +38,6 @@ td_memcpy (dst, src, count)
 	const void	*src;
 	size_t		count;
 {
-		void 	*start;
-
-		start = dst;
-		while (count--)
-			*(unsigned char *) dst++ = *(unsigned char *) src++;
-		return (start);
+		td_bcopy (src, dst, count);
+		return (dst);
 }

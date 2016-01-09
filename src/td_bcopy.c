@@ -21,30 +21,21 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- * td_memset.c
- * This file is part of the c_td project.
+ * td_bcopy.c
+ * This file is part of the td_libc project.
  *
- *  Created on: Jan 7, 2016
+ *  Created on: 9 janv. 2016
  *      Author: theophile
  */
 
-#include "../include/tdassert.h"
-#include "../include/tdstring.h"
+#include "../include/tdstrings.h"
 
-void*
-td_memset (ptr, c, count)
-	void	*ptr;
-	int 	c;
-	size_t 	count;
+void
+td_bcopy (src, dst, n)
+	const void	*src;
+	void	*dst;
+	size_t		n;
 {
-		// td_assert((c >= 0) && (c <= 255)); /* valid int as unsigned char ? */
-
-		void	*start;
-
-		start = ptr;
-		while (count--)
-			*(unsigned char *) ptr++ = (unsigned char) c;
-
-		return (start);
+		while (n-- > 0)
+			*(unsigned char *) dst++ = *(unsigned char *) src++;
 }
-

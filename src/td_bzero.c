@@ -32,7 +32,7 @@
  * exceed its length.
  */
 
-#include "tdstring.h"
+#include "../include/tdstrings.h"
 
 #define BZ0_VAL 0
 
