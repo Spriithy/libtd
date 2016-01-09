@@ -40,8 +40,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#undef td_assert
-#undef __td_assert
+#undef	td_assert
+#undef	__td_assert
 
 #define td_assert(e)  \
 	((void) ((e) ? 0 : __td_assert (#e, __FILE__, __LINE__)))

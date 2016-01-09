@@ -32,13 +32,13 @@
 
 size_t
 td_strlen (s)
-		const char	*s;
+	const char	*s;
 {
-		size_t	len;
+	size_t	len;
 
-		len = 0;
-		while (*s++)
-			len++;
+	len = 0;
+	while (*s++)
+		len++;
 
-		return (len);
+	return (len);
 }

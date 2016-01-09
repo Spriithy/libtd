@@ -33,17 +33,17 @@
 
 void*
 td_memset (ptr, c, count)
-		void	*ptr;
-		int 	c;
-		size_t 	count;
+	void	*ptr;
+	int	c;
+	size_t	count;
 {
-		td_assert((c >= 0) && (c <= 255)); /* valid int as unsigned char ? */
-		void	*start;
+	void	*start;
 
-		start = ptr;
-		while (count--)
-			*(unsigned char *) ptr++ = (unsigned char) c;
+	start = ptr;
+	td_assert((c >= 0) && (c <= 255));
+	while (count--)
+		*(unsigned char *) ptr++ = (unsigned char) c;
 
-		return (start);
+	return (start);
 }
 

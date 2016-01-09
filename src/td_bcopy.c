@@ -32,10 +32,10 @@
 
 void
 td_bcopy (src, dst, n)
-		const void	*src;
-		void		*dst;
-		size_t		n;
+	const void	*src;
+	void		*dst;
+	size_t		n;
 {
-		while (n-- > 0)
-			*(unsigned char *) dst++ = *(unsigned char *) src++;
+	while (n-- > 0)
+		*(unsigned char *) dst++ = *(unsigned char *) src++;
 }

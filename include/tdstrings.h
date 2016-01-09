@@ -36,13 +36,13 @@
 #endif
 
 #ifndef _SIZE_T_DEFINED
-  typedef unsigned long	size_t;
+typedef unsigned long	size_t;
 # define _SIZE_T_DEFINED
 # define _SIZE_T
 #endif /* _SIZE_T_DEFINED */
 
 void	td_bzero	(void *ptr, size_t count);
 void	td_bcopy	(const void *src, void *dst, size_t n);
-int 	td_bcmp 	(const void *s1, const void *s2, size_t n);
+int	td_bcmp 	(const void *s1, const void *s2, size_t n);
 
 #endif /* _TDSTRINGS_H_ */

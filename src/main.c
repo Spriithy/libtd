@@ -34,12 +34,12 @@
 int
 main (void)
 {
-		char source[] = "once upon a midnight dreary...", dest[11];
-		td_memset(source, 104, 4);
-		td_bcopy(source, dest, 10);
-		dest[10] = '\0';
-		printf("<%s>\n", dest);
-		printf("%d\n", td_bcmp(source, dest, 10));
-		printf("%lu\n", td_strlen("foo"));
-		return (0);
+	char source[] = "once upon a midnight dreary...", dest[11];
+	td_memset(source, 104, 4);
+	td_bcopy(source, dest, 10);
+	dest[10] = '\0';
+	printf("<%s>\n", dest);
+	printf("%d\n", td_bcmp(source, dest, 10));
+	printf("%lu\n", td_strlen("foo"));
+	return (0);
 }
