@@ -22,7 +22,7 @@
  * SOFTWARE.
  *
  * td_memcpy.c
- * This file is part of the c_td project.
+ * This file is part of the td_libc project.
  *
  *  Created on: Jan 8, 2016
  *      Author: theophile

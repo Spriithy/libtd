@@ -22,7 +22,7 @@
  * SOFTWARE.
  *
  * tdlib.h
- * This file is part of the c_td project.
+ * This file is part of the td_libc project.
  *
  *  Created on: Jan 7, 2016
  *      Author: theophile

@@ -22,7 +22,7 @@
  * SOFTWARE.
  * 
  * tdctype.h
- * This file is part of the c_td project.
+ * This file is part of the td_libc project.
  *
  *  Created on: 9 Jan 2016
  *      Author: Theophile

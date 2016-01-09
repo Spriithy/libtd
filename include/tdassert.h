@@ -22,7 +22,7 @@
  * SOFTWARE.
  *
  * tdassert.h
- * This file is part of the c_td project.
+ * This file is part of the td_libc project.
  *
  *  Created on: 8 Jan 2016
  *      Author: Theophile
@@ -33,8 +33,8 @@
  *
  */
 
-#ifndef _SRC_TDASSERT_H_
-#define _SRC_TDASSERT_H_
+#ifndef _TDASSERT_H_
+#define _TDASSERT_H_
 
 /* TODO : please get rid of it asap */
 #include <stdio.h>
@@ -49,4 +49,4 @@
 #define __td_assert(e, file, line) \
 	((void)printf ("%s:%u: failed assertion `%s'\n", file, line, e), abort())
 
-#endif /* _SRC_TDASSERT_H_ */
+#endif /* _TDASSERT_H_ */
