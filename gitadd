@@ -1,2 +1,2 @@
-git add src/* include/*
+git add -u :/
 git status
