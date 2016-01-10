@@ -16,6 +16,6 @@
         int     c;
 {
         if (td_isdigit (c)) return (c - '0');
-        
+
         return (-1);
 }

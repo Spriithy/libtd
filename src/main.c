@@ -12,7 +12,7 @@
 #include <stdio.h>
 #include <td/string.h>
 #include <td/mem.h>
-
+#include <td/math.h>
 
 int
 main (void)
@@ -21,6 +21,6 @@ main (void)
 	char	*source = "Je suis une taupe n'est-ce pas ?";
 	foo = td_strdup(source);
 	printf("<%s>\n", foo);
-
+	
 	return (0);
 }

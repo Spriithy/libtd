@@ -11,6 +11,14 @@
 #ifndef _TD_MATH_C_
 #define _TD_MATH_C_
 
-int	td_abs	(int i);
+#ifndef td_max
+# define td_max(x, y)   (((x) > (y)) ? (x) : (y))
+#endif
+
+#ifndef td_min
+# define td_min(x, y)   (((x) < (y)) ? (x) : (y))
+#endif
+
+int	td_abs  (int i);
 
 #endif /* _TD_MATH_C_ */
