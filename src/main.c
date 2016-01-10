@@ -22,7 +22,7 @@
  * SOFTWARE.
  *
  * main.c
- * This file is part of the td_libc project.
+ * This file is part of the libtd project.
  *
  *  Created on: Jan 7, 2016
  *      Author: theophile

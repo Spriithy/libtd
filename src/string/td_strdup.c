@@ -22,7 +22,7 @@
  * SOFTWARE.
  *
  * td_strdup.c
- * This file is part of the td_libc project.
+ * This file is part of the libtd project.
  *
  *  Created on: 9 janv. 2016
  *      Author: theophile
@@ -30,12 +30,12 @@
 
 #include <stdlib.h>
 
-#include "../../include/tdstring.h"
-#include "../../include/tdstrings.h"
+#include <td/string.h>
+#include <td/mem.h>
 
 char *
 td_strdup (s)
-	char	*s;
+	const char	*s;
 {
 	char	*nws;
 	size_t	len;
@@ -43,7 +43,7 @@ td_strdup (s)
 	len = td_strlen (s) + 1;
 	if (!(nws = (char *) malloc (len)))
 		return (TD_NULL);
-	td_bcopy (nws, s, len);
+	td_bcopy (s, nws, len);
 
 	return (nws);
 }

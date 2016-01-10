@@ -22,21 +22,23 @@
  * SOFTWARE.
  *
  * td_bcmp.c
- * This file is part of the td_libc project.
+ * This file is part of the libtd project.
  *
  *  Created on: 9 janv. 2016
  *      Author: theophile
  */
 
-#include "../../include/tdstrings.h"
+#include <td/string.h>
 
 int
-td_bcmp (s1, s2, n)
-	const void	*s1, *s2;
-	size_t		n;
+td_bcmp (s1, s2, count)
+	const void	*s1;
+	const void 	*s2;
+	int		count;
 {
-	while (n-- > 0)
-		if (*(unsigned char *) s1++ != *(unsigned char *) s2++) return (1);
+	while (count-- > 0)
+		if (*(unsigned char *) s1++ != *(unsigned char *) s2++)
+			return (1);
 
 	return (0);
 }

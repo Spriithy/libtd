@@ -22,20 +22,18 @@
  * SOFTWARE.
  *
  * td_bcopy.c
- * This file is part of the td_libc project.
+ * This file is part of the libtd project.
  *
  *  Created on: 9 janv. 2016
  *      Author: theophile
  */
 
-#include "../../include/tdstrings.h"
-
 void
-td_bcopy (src, dst, n)
-	const void	*src;
+td_bcopy (src, dst, count)
+	const void 	*src;
 	void		*dst;
-	size_t		n;
+	int		count;
 {
-	while (n-- > 0)
+	while (count-- > 0)
 		*(unsigned char *) dst++ = *(unsigned char *) src++;
 }

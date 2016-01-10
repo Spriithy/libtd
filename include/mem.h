@@ -22,7 +22,7 @@
  * SOFTWARE.
  *
  * tdstrings.h
- * This file is part of the td_libc project.
+ * This file is part of the libtd project.
  *
  *  Created on: 9 janv. 2016
  *      Author: theophile
@@ -31,18 +31,8 @@
 #ifndef _TD_MEM_H_
 #define _TD_MEM_H_
 
-#ifndef TD_NULL
-# define TD_NULL (void *) 0
-#endif
-
-#ifndef _SIZE_T_DEFINED
-typedef unsigned long	size_t;
-# define _SIZE_T_DEFINED
-# define _SIZE_T
-#endif /* _SIZE_T_DEFINED */
-
-void	td_bzero	(void *ptr, size_t count);
-void	td_bcopy	(const void *src, void *dst, size_t n);
-int     td_bcmp 	(const void *s1, const void *s2, size_t n);
+void	td_bzero	(void *ptr, int count);
+void	td_bcopy	(const void *src, void *dst, int count);
+int     td_bcmp         (const void *s1, const void *s2, int count);
 
 #endif /* _TD_MEM_H_ */

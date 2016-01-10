@@ -22,13 +22,13 @@
  * SOFTWARE.
  *
  * td_memcmp.c
- * This file is part of the td_libc project.
+ * This file is part of the libtd project.
  *
  *  Created on: 9 janv. 2016
  *      Author: theophile
  */
 
-#include "../../include/tdstring.h"
+#include <td/string.h>
 
 int
 td_memcmp (s1, s2, count)

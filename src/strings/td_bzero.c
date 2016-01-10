@@ -22,7 +22,7 @@
  * SOFTWARE.
  *
  * td_bzero.c
- * This file is part of the td_libc project.
+ * This file is part of the libtd project.
  *
  *  Created on: Jan 7, 2016
  *      Author: theophile
@@ -32,15 +32,11 @@
  * exceed its length.
  */
 
-#include "../../include/tdstrings.h"
-
-#define BZ0_VAL 0
-
 void
 td_bzero (ptr, count)
 	void	*ptr;
-	size_t	count;
+	int	count;
 {
 	while (count-- > 0)
-		*(unsigned char *) ptr++ = BZ0_VAL;
+		*(unsigned char *) ptr++ = 0;
 }

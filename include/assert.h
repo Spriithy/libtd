@@ -22,7 +22,7 @@
  * SOFTWARE.
  *
  * tdassert.h
- * This file is part of the td_libc project.
+ * This file is part of the libtd project.
  *
  *  Created on: 8 Jan 2016
  *      Author: Theophile

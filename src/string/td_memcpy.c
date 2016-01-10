@@ -22,15 +22,14 @@
  * SOFTWARE.
  *
  * td_memcpy.c
- * This file is part of the td_libc project.
+ * This file is part of the libtd project.
  *
  *  Created on: Jan 8, 2016
  *      Author: theophile
- *
  */
 
-#include "../../include/tdstring.h"
-#include "../../include/tdstrings.h"
+#include <td/string.h>
+#include <td/mem.h>
 
 void *
 td_memcpy (dst, src, count)

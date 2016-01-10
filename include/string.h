@@ -22,7 +22,7 @@
  * SOFTWARE.
  *
  * tdlib.h
- * This file is part of the td_libc project.
+ * This file is part of the libtd project.
  *
  *  Created on: Jan 7, 2016
  *      Author: theophile
@@ -52,7 +52,6 @@ void	*td_memchr	(const void *ptr, int c, size_t count);
 int 	 td_memcmp	(const void *s1, const void *s2, size_t count);
 
 /* string related functions */
-
 size_t	 td_strlen	(const char *s);
 char	*td_strdup	(const char *s);
 char	*td_strndup	(const char *s, size_t n);
