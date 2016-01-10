@@ -21,25 +21,33 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- * main.c
+ * td_strndup.c
  * This file is part of the libtd project.
  *
- *  Created on: Jan 7, 2016
+ *  Created on: 10 janv. 2016
  *      Author: theophile
  */
 
-#include <stdio.h>
+#include <stdlib.h>
 #include <td/string.h>
-#include <td/mem.h>
 
-
-int
-main (void)
+char *
+td_strndup (s, len)
+	const char	*s;
+        size_t          len;
 {
-	char	*foo;
-	char	*source = "Je suis une taupe n'est-ce pas ?";
-	foo = td_strdup(source);
-	printf("<%s>\n", foo);
+	char	*nws;
+        size_t  sz;
 
-	return (0);
+        sz = td_strlen (s);
+        if (sz > len)
+                sz = len;
+
+	if (!(nws = (char *) malloc (sz + 1)))
+		return ((char *) TD_NULL);
+
+	td_memcpy (nws, s, len);
+        nws[sz] = '\0';
+
+	return (nws);
 }

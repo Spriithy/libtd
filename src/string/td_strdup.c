@@ -29,9 +29,7 @@
  */
 
 #include <stdlib.h>
-
 #include <td/string.h>
-#include <td/mem.h>
 
 char *
 td_strdup (s)
@@ -43,7 +41,7 @@ td_strdup (s)
 	len = td_strlen (s) + 1;
 	if (!(nws = (char *) malloc (len)))
 		return (TD_NULL);
-	td_bcopy (s, nws, len);
+	td_memcpy (nws, s, len);
 
 	return (nws);
 }

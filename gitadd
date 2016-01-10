@@ -1,2 +1,5 @@
 git add -u :/
+git add */*
+git add */*/*
+git add */*/*/*
 git status

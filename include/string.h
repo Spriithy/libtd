@@ -54,21 +54,21 @@ int 	 td_memcmp	(const void *s1, const void *s2, size_t count);
 /* string related functions */
 size_t	 td_strlen	(const char *s);
 char	*td_strdup	(const char *s);
-char	*td_strndup	(const char *s, size_t n);
+char	*td_strndup	(const char *s, size_t len);
 char	*td_stpcpy	(char *dst, const char *src);
 char	*td_stpncpy	(char *dst, const char *src, size_t len);
 char	*td_strcpy	(char *dst, const char *src);
 char	*td_strncpy	(char *dst, const char *src, size_t len);
 char	*td_strcat	(char *s1, const char *s2);
-char	*td_strncat	(char *s1, const char *s2, size_t n);
-size_t	 td_strlcpy	(char *dst, const char *src, size_t size);
-size_t	 td_strlcat	(char *dst, const char *src, size_t size);
+char	*td_strncat	(char *s1, const char *s2, size_t len);
+size_t	 td_strlcpy	(char *dst, const char *src, size_t len);
+size_t	 td_strlcat	(char *dst, const char *src, size_t len);
 char	*td_strchr	(const char *s, int c);
 char	*td_strrchr	(const char *s, int c);
 char	*td_strstr	(const char *big, const char *little);
 char	*td_strcasestr	(const char *big, const char *little);
 char	*td_strnstr	(const char *big, const char *little, size_t len);
 int 	 td_strcmp	(const char *s1, const char *s2);
-int 	 td_strncmp	(const char *s1, const char *s2, size_t n);
+int 	 td_strncmp	(const char *s1, const char *s2, size_t len);
 
 #endif /* _TD_STRING_H_ */
