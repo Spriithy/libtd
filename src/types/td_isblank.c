@@ -21,33 +21,16 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- * td_strndup.c
+ * td_isblank.h
  * This file is part of the libtd project.
  *
- *  Created on: 10 janv. 2016
- *      Author: theophile
+ *  Created on: 10 Jan 2016
+ *      Author: Theophile
  */
 
-#include <stdlib.h>
-#include <td/string.h>
-
-char *
-td_strndup (s, len)
-	const char     *s;
-        size_t          len;
+int
+td_isblank (c)
+        int     c;
 {
-	char    *nws;
-        size_t  sz;
-
-        sz = td_strlen (s);
-        if (sz > len)
-                sz = len;
-
-	if (!(nws = (char *) malloc (sz + 1)))
-		return ((char *) TD_NULL);
-
-	td_memcpy (nws, s, len);
-        nws[sz] = '\0';
-
-	return (nws);
+        return ((c == ' ') || (c == '\t'));
 }
