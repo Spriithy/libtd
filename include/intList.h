@@ -27,11 +27,12 @@ int      intlist_get     (intList *l, size_t at);
 void     intlist_set     (intList *l, size_t at, int el);
 int      intlist_front   (intList *l);
 int      intlist_tail    (intList *l);
+void     intlist_remove  (intList *l, size_t at);
 void     intlist_append  (intList *dst, intList *src);
 void     intlist_del     (intList *l);
 int      intlist_cmp     (intList *l0, intList *l1);
 int      intlist_ncmp    (intList *l0, intList *l1, size_t count);
 
-void     intlist_print  (intList *l);
+void     intlist_print   (intList *l);
 
 #endif  /* _TD_NLIST_H_ */

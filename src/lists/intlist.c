@@ -69,17 +69,7 @@ intList *
 intlist_cpy (l)
         intList *l;
 {
-        intList *r;
-
-        r = intlist_new ();
-        if ((r->data = malloc (r->size * sizeof (int))) == NULL) {
-                /* TODO : exception */
-        }
-        td_bcopy (l->data, r->data, l->size);
-        r->size = l->size;
-        r->capacity = r->size;
-
-        return (r);
+        return (intlist_init (l->size, l->data));
 }
 
 intList *
@@ -172,6 +162,27 @@ intlist_tail (l)
 }
 
 void
+intlist_remove (l, at)
+        intList *l;
+        size_t  at;
+{
+        size_t  ofs;
+        int     *d;
+
+        td_assert (l->size > 0);
+        td_assert (at <= l->size);
+
+        d = l->data + at;
+        ofs = l->size - (at + 1);
+        while (ofs-- > 0) {
+                *d = *(d + 1);
+                d++;
+        }
+
+        l->size--;
+}
+
+void
 intlist_append (l0, l1)
         intList *l0;
         intList *l1;
@@ -234,7 +245,10 @@ intlist_print (l)
 
         sz = 0;
         printf("[ ");
-        while (sz++ < l->size)
-                printf (((sz == l->size) ? "%d " : "%d, "), intlist_get (l, sz - 1));
+        while (sz < l->size) {
+                printf (((sz == l->size - 1) ? "%d " : "%d, "),
+                        intlist_get (l, sz));
+                sz++;
+        }
         printf("]\n");
 }

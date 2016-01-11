@@ -36,7 +36,7 @@ chrlist_new (void)
         chrList *l;
 
         l = calloc (1, sizeof (chrList));
-        l->capacity = TD_INTLIST_DEFAULT_SIZE;
+        l->capacity = TD_CHRLIST_DEFAULT_SIZE;
         l->size = 0;
         if ((l->data = malloc ((l->capacity + 1) * sizeof (char))) == NULL) {
                 /* TODO : exception */
@@ -70,17 +70,7 @@ chrList *
 chrlist_cpy (l)
         chrList *l;
 {
-        chrList *r;
-
-        r = chrlist_new ();
-        if ((r->data = malloc (r->size * sizeof (char))) == NULL) {
-                /* TODO : exception */
-        }
-        td_bcopy (l->data, r->data, l->size);
-        r->size = l->size;
-        r->capacity = r->size;
-
-        return (r);
+        return (chrlist_init (l->size, (int *) l->data));
 }
 
 chrList *
@@ -173,6 +163,27 @@ chrlist_tail (l)
 }
 
 void
+chrlist_remove (l, at)
+        chrList *l;
+        size_t  at;
+{
+        size_t  ofs;
+        char    *d;
+
+        td_assert (l->size > 0);
+        td_assert (at <= l->size);
+
+        d = l->data + at;
+        ofs = l->size - (at + 1);
+        while (ofs-- > 0) {
+                *d = *(d + 1);
+                d++;
+        }
+
+        l->size--;
+}
+
+void
 chrlist_append (l0, l1)
         chrList *l0;
         chrList *l1;
@@ -235,7 +246,10 @@ chrlist_print (l)
 
         sz = 0;
         printf ("[ ");
-        while (sz++ < l->size)
-                printf (((sz == l->size) ? "\'%c\' " : "\'%c\', "), chrlist_get (l, sz - 1));
+        while (sz < l->size) {
+                printf (((sz == l->size - 1) ? "\'%c\' " : "\'%c\', "),
+                        chrlist_get (l, sz));
+                sz++;
+        }
         printf ("]\n");
 }

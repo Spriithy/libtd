@@ -27,6 +27,7 @@ char    *strlist_get     (strList *l, size_t at);
 void     strlist_set     (strList *l, size_t at, char *el);
 char    *strlist_front   (strList *l);
 char    *strlist_tail    (strList *l);
+void     strlist_remove  (strList *l, size_t at);
 void     strlist_append  (strList *dst, strList *src);
 void     strlist_del     (strList *l);
 int      strlist_cmp     (strList *l0, strList *l1);

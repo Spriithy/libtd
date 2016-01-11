@@ -36,7 +36,7 @@ strlist_new (void)
         strList *l;
 
         l = calloc (1, sizeof (strList));
-        l->capacity = TD_INTLIST_DEFAULT_SIZE;
+        l->capacity = TD_STRLIST_DEFAULT_SIZE;
         l->size = 0;
         if ((l->data = malloc ((l->capacity + 1) * sizeof (char *))) == NULL) {
                 /* TODO : exception */
@@ -70,17 +70,7 @@ strList *
 strlist_cpy (l)
         strList *l;
 {
-        strList *r;
-
-        r = strlist_new ();
-        if ((r->data = malloc (r->size * sizeof (char *))) == NULL) {
-                /* TODO : exception */
-        }
-        td_bcopy (l->data, r->data, l->size);
-        r->size = l->size;
-        r->capacity = r->size;
-
-        return (r);
+        return (strlist_init (l->size, l->data));
 }
 
 strList *
@@ -173,6 +163,27 @@ strlist_tail (l)
 }
 
 void
+strlist_remove (l, at)
+        strList *l;
+        size_t  at;
+{
+        size_t  ofs;
+        char    **d;
+
+        td_assert (l->size > 0);
+        td_assert (at <= l->size);
+
+        d = l->data + at;
+        ofs = l->size - (at + 1);
+        while (ofs-- > 0) {
+                *d = *(d + 1);
+                d++;
+        }
+
+        l->size--;
+}
+
+void
 strlist_append (l0, l1)
         strList *l0;
         strList *l1;
@@ -235,7 +246,10 @@ strlist_print (l)
 
         sz = 0;
         printf ("[ ");
-        while (sz++ < l->size)
-                printf (((sz == l->size) ? "\"%s\" " : "\"%s\", "), strlist_get (l, sz - 1));
+        while (sz < l->size) {
+                printf (((sz == l->size - 1) ? "\"%s\" " : "\"%s\", "),
+                        strlist_get (l, sz));
+                sz++;
+        }
         printf ("]\n");
 }

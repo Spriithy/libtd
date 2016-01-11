@@ -27,6 +27,7 @@ char     chrlist_get     (chrList *l, size_t at);
 void     chrlist_set     (chrList *l, size_t at, int el);
 char     chrlist_front   (chrList *l);
 char     chrlist_tail    (chrList *l);
+void     chrlist_remove  (chrList *l, size_t at);
 void     chrlist_append  (chrList *dst, chrList *src);
 void     chrlist_del     (chrList *l);
 int      chrlist_cmp     (chrList *l0, chrList *l1);
