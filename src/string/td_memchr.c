@@ -10,6 +10,7 @@
  */
 
 #include <td/string.h>
+#include <td/tdef.h>
 
 void *
 td_memchr (ptr, c, count)

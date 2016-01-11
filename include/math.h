@@ -8,6 +8,7 @@
  *  Created on: 9 janv. 2016
  *      Author: theophile
  */
+
 #ifndef _TD_MATH_C_
 #define _TD_MATH_C_
 
@@ -20,5 +21,7 @@
 #endif
 
 int	td_abs  (int i);
+float   td_absf (float f);
+double  td_absd (double d);
 
 #endif /* _TD_MATH_C_ */

@@ -11,6 +11,7 @@
 
 #include <stdlib.h>
 #include <td/string.h>
+#include <td/tdef.h>
 
 char *
 td_strndup (s, len)

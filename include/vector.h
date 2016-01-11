@@ -12,11 +12,7 @@
 #ifndef _TD_VECTOR_H_
 #define _TD_VECTOR_H_
 
-#ifndef _SIZE_T_DEFINED
-typedef unsigned long	size_t;
-# define _SIZE_T_DEFINED
-# define _SIZE_T
-#endif /* _SIZE_T_DEFINED */
+#include <td/tdef.h>
 
 typedef struct Vector {
         void    **data;

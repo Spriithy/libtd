@@ -10,6 +10,7 @@
  */
 
 #include <td/string.h>
+#include <td/tdef.h>
 
 void *
 td_memccpy (dst, src, c, count)

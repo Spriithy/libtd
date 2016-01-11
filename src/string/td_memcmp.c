@@ -10,6 +10,7 @@
  */
 
 #include <td/string.h>
+#include <td/tdef.h>
 
 int
 td_memcmp (s1, s2, count)

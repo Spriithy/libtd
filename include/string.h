@@ -12,17 +12,7 @@
 #ifndef _TD_STRING_H_
 #define _TD_STRING_H_
 
-#ifdef	TD_NULL
-# undef	TD_NULL
-#endif
-
-#define	TD_NULL	((void *) 0)
-
-#ifndef _SIZE_T_DEFINED
-typedef unsigned long	size_t;
-# define _SIZE_T_DEFINED
-# define _SIZE_T
-#endif /* _SIZE_T_DEFINED */
+#include <td/tdef.h>
 
 /* memory management functions */
 void	*td_memset	(void *ptr, int c, size_t count);
