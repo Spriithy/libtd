@@ -10,7 +10,6 @@
  *
  * This file contains basic type functions such as isalpha or toupper. For now,
  * are only implemented character manipulation/treatment functions.
- *
  */
 
 #ifndef _TD_TYPES_H_
