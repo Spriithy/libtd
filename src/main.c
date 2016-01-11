@@ -10,17 +10,40 @@
  */
 
 #include <stdio.h>
-#include <td/string.h>
-#include <td/mem.h>
-#include <td/math.h>
+#include <stdio.h>
+#include <td/strList.h>
+#include <td/chrList.h>
+#include <td/intList.h>
 
 int
 main (void)
 {
-	char	*foo;
-	char	*source = "Je suis une taupe n'est-ce pas ?";
-	foo = td_strdup(source);
-	printf("<%s>\n", foo);
-	
-	return (0);
+        intList *il = intlist_new ();
+        strList *sl = strlist_new ();
+        chrList *cl = chrlist_new ();
+
+        int i = 0;
+        while (i < 16)
+        {       intlist_push (il, i);
+                chrlist_push (cl, 'a' + i++);
+        }
+
+        strlist_push (sl, "Foo");
+        strlist_push (sl, "Bar");
+        strlist_push (sl, "Baz");
+
+        intlist_print (il);
+        strlist_print (sl);
+        chrlist_print (cl);
+
+        printf ("%d %d %d\n",
+                intlist_cmp (il, il),
+                chrlist_cmp (cl, cl),
+                strlist_cmp (sl, sl));
+
+        intlist_del (il);
+        strlist_del (sl);
+        chrlist_del (cl);
+        
+        return (0);
 }
