@@ -25,7 +25,8 @@ static void grow (l, dt)
                 return ;
         l->capacity = l->size + dt;
         if ((l->data = realloc (l->data, l->capacity * sizeof (int))) == NULL) {
-                /* TODO : exception */
+                fprintf (stderr, "Malloc failed -~- \n");
+                exit (EXIT_FAILURE);
         }
 }
 
@@ -38,7 +39,8 @@ intlist_new (void)
         l->capacity = TD_INTLIST_DEFAULT_SIZE;
         l->size = 0;
         if ((l->data = malloc ((l->capacity + 1) * sizeof (int))) == NULL) {
-                /* TODO : exception */
+                fprintf (stderr, "Malloc failed -~- \n");
+                exit (EXIT_FAILURE);
         }
 
         return (l);
@@ -56,7 +58,8 @@ intlist_init (sz, items)
         l->capacity = sz;
         l->size = 0;
         if ((l->data = malloc (l->capacity * sizeof (int))) == NULL) {
-                /* TODO : exception */
+                fprintf (stderr, "Malloc failed -~- \n");
+                exit (EXIT_FAILURE);
         }
         i = sz;
         while (i-- > 0)
