@@ -39,6 +39,7 @@ char	*td_strrchr	(const char *s, int c);
 char	*td_strstr	(const char *big, const char *little);
 char	*td_strcasestr	(const char *big, const char *little);
 char	*td_strnstr	(const char *big, const char *little, size_t len);
+int 	 td_streq	(const char *s1, const char *s2);
 int 	 td_strcmp	(const char *s1, const char *s2);
 int 	 td_strncmp	(const char *s1, const char *s2, size_t len);
 
