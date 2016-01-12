@@ -18,7 +18,7 @@
 int
 main (void)
 {
-        intList *il = intlist_new ();
+        intList	*il = intlist_new ();
         strList *sl = strlist_new ();
         chrList *cl = chrlist_new ();
 
