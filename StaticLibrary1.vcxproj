@@ -22,14 +22,15 @@
     <ClInclude Include="include\libtd.h" />
     <ClInclude Include="include\td\ascii.h" />
     <ClInclude Include="include\td\assert.h" />
+    <ClInclude Include="include\td\List.h" />
     <ClInclude Include="include\td\list\List_c.h" />
     <ClInclude Include="include\td\list\List_d.h" />
     <ClInclude Include="include\td\list\List_f.h" />
     <ClInclude Include="include\td\list\List_i.h" />
-    <ClInclude Include="include\td\list.h" />
     <ClInclude Include="include\td\list\List_l.h" />
     <ClInclude Include="include\td\list\List_ul.h" />
-    <ClInclude Include="include\td\map.h" />
+    <ClInclude Include="include\td\Dict.h" />
+    <ClInclude Include="include\td\dict\Dict_i.h" />
     <ClInclude Include="include\td\math.h" />
     <ClInclude Include="include\td\mem.h" />
     <ClInclude Include="include\td\string.h" />
@@ -44,14 +45,16 @@
     <ClCompile Include="src\ascii\td_isblank.c" />
     <ClCompile Include="src\ascii\td_iscntrl.c" />
     <ClCompile Include="src\ascii\td_isdigit.c" />
-    <ClCompile Include="src\list\chrlist.c" />
-    <ClCompile Include="src\list\dbllist.c" />
-    <ClCompile Include="src\list\fltlist.c" />
-    <ClCompile Include="src\list\intlist.c" />
-    <ClCompile Include="src\list\lnglist.c" />
-    <ClCompile Include="src\list\strlist.c" />
-    <ClCompile Include="src\list\ullist.c" />
+    <ClCompile Include="src\list\List_c.c" />
+    <ClCompile Include="src\list\List-d.c" />
+    <ClCompile Include="src\list\List_f.c" />
+    <ClCompile Include="src\list\List_i.c" />
+    <ClCompile Include="src\list\List_l.c" />
+    <ClCompile Include="src\list\List_s.c" />
+    <ClCompile Include="src\list\List_ul.c" />
     <ClCompile Include="src\main.c" />
+    <ClCompile Include="src\dict\Dict.c" />
+    <ClCompile Include="src\dict\Dict_i.c" />
     <ClCompile Include="src\math\td_abs.c" />
     <ClCompile Include="src\mem\td_bcmp.c" />
     <ClCompile Include="src\mem\td_bcopy.c" />
@@ -102,28 +105,28 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
     <IncludePath>$(VCClangInstallDir)include;$(VC_IncludePath);$(WindowsSDK_IncludePath);$(ProjectDir)/include;</IncludePath>
     <TargetName>main</TargetName>
     <TargetExt>.exe</TargetExt>
     <OutDir>.\Debug\libtd</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
     <IncludePath>$(VCClangInstallDir)include;$(VC_IncludePath);$(WindowsSDK_IncludePath);$(ProjectDir)/include;</IncludePath>
     <TargetName>main</TargetName>
     <TargetExt>.exe</TargetExt>
     <OutDir>.\Debug\libtd</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
     <IncludePath>$(VCClangInstallDir)include;$(VC_IncludePath);$(WindowsSDK_IncludePath);$(ProjectDir)/include;</IncludePath>
     <TargetName>main</TargetName>
     <TargetExt>.exe</TargetExt>
     <OutDir>.\Debug\libtd</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
     <IncludePath>$(VCClangInstallDir)include;$(VC_IncludePath);$(WindowsSDK_IncludePath);$(ProjectDir)/include;</IncludePath>
     <TargetName>main</TargetName>
     <TargetExt>.exe</TargetExt>
@@ -152,10 +155,10 @@
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
-      <EnablePREfast Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</EnablePREfast>
-      <EnablePREfast Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</EnablePREfast>
-      <EnablePREfast Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</EnablePREfast>
-      <EnablePREfast Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</EnablePREfast>
+      <EnablePREfast Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</EnablePREfast>
+      <EnablePREfast Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</EnablePREfast>
+      <EnablePREfast Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</EnablePREfast>
+      <EnablePREfast Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</EnablePREfast>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
       <PrecompiledHeaderCompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsC</PrecompiledHeaderCompileAs>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
@@ -176,6 +179,10 @@
       <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
       <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
       <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\Théophile Dano\dev\libtd\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\Théophile Dano\dev\libtd\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Théophile Dano\dev\libtd\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Théophile Dano\dev\libtd\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

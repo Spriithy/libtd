@@ -1,5 +1,5 @@
 /*
- * list.h
+ * List.h
  *
  * This file is part of the libtd project and provided under the MIT License.
  * You can refer to the LICENSE file at repository's root for complete license
@@ -14,13 +14,13 @@
 #ifndef _TD_LIST_H_
 #define _TD_LIST_H_
 
-#define TD_INTLIST_DEFAULT_SIZE     0
-#define TD_CHRLIST_DEFAULT_SIZE     0
-#define TD_STRLIST_DEFAULT_SIZE     0
-#define TD_FLTLIST_DEFAULT_SIZE     0
-#define TD_DBLLIST_DEFAULT_SIZE     0
-#define TD_LNGLIST_DEFAULT_SIZE     0
-#define	 TD_ULLIST_DEFAULT_SIZE     0
+#define TD_INTLIST_DEFAULT_SIZE     (0)
+#define TD_CHRLIST_DEFAULT_SIZE     (0)
+#define TD_STRLIST_DEFAULT_SIZE     (0)
+#define TD_FLTLIST_DEFAULT_SIZE     (0)
+#define TD_DBLLIST_DEFAULT_SIZE     (0)
+#define TD_LNGLIST_DEFAULT_SIZE     (0)
+#define	 TD_ULLIST_DEFAULT_SIZE     (0)
 
 typedef struct s_intList {
         int		*data;

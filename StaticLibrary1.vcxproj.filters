@@ -24,9 +24,6 @@
     <ClInclude Include="include\td\assert.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\td\list.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\td\math.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -37,9 +34,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\libtd.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\td\map.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\td\list\List_ul.h">
@@ -61,6 +55,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\td\list\List_s.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\td\List.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\td\dict\Dict_i.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\td\Dict.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -131,25 +134,31 @@
     <ClCompile Include="src\main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\list\chrlist.c">
+    <ClCompile Include="src\list\List_c.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\list\dbllist.c">
+    <ClCompile Include="src\list\List_i.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\list\fltlist.c">
+    <ClCompile Include="src\list\List_f.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\list\intlist.c">
+    <ClCompile Include="src\list\List-d.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\list\lnglist.c">
+    <ClCompile Include="src\list\List_l.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\list\strlist.c">
+    <ClCompile Include="src\list\List_s.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\list\ullist.c">
+    <ClCompile Include="src\list\List_ul.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dict\Dict.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dict\Dict_i.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

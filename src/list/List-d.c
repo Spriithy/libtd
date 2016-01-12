@@ -1,5 +1,5 @@
 /*
- * ullist.c
+ * List_d.c
  *
  * This file is part of the libtd project and provided under the MIT License.
  * You can refer to the LICENSE file at repository's root for complete license
@@ -14,120 +14,120 @@
 #include <libtd.h>
 
 static void grow (l, dt)
-        List_ul	*l;
+        List_d	*l;
         int     dt;
 {
         td_assert (dt > 0);
         if (l->size + dt <= l->capacity)
                 return ;
         l->capacity = l->size + dt;
-	if ((l->data = realloc (l->data, l->capacity * sizeof (unsigned long))) == NULL) {
+	if ((l->data = realloc (l->data, l->capacity * sizeof (double))) == NULL) {
 		fprintf(stderr, "%s:%d: Malloc failed -~- cannot grow current "
-			"List_ul", __FILE__, __LINE__);
+			"List_d", __FILE__, __LINE__);
                 exit (EXIT_FAILURE);
         }
 }
 
-List_ul *
-listul_new (void)
+List_d *
+listd_new (void)
 {
-        List_ul	*l;
+        List_d	*l;
 
-        l = calloc (1, sizeof (List_ul));
-        l->capacity = TD_ULLIST_DEFAULT_SIZE;
+        l = calloc (1, sizeof (List_d));
+        l->capacity = TD_DBLLIST_DEFAULT_SIZE;
         l->size = 0;
-        if ((l->data = malloc ((l->capacity + 1) * sizeof (unsigned long))) == NULL) {
+        if ((l->data = malloc ((l->capacity + 1) * sizeof (double))) == NULL) {
                 fprintf (stderr, "%s:%d: Malloc failed -~- can't allocate memory"
-			" for new List_ul\n", __FILE__, __LINE__);
+			" for new List_d\n", __FILE__, __LINE__);
                 exit (EXIT_FAILURE);
         }
 
         return (l);
 }
 
-List_ul *
-listul_init (sz, items)
-        size_t		sz;
-        unsigned long	*items;
+List_d *
+listd_init (sz, items)
+        size_t  sz;
+        double	*items;
 {
-        List_ul	*l;
+        List_d	*l;
         int     i;
 
-        l = calloc (1, sizeof (List_ul));
+        l = calloc (1, sizeof (List_d));
         l->capacity = sz;
         l->size = 0;
-	if ((l->data = malloc (l->capacity * sizeof (unsigned long))) == NULL) {
+	if ((l->data = malloc (l->capacity * sizeof (double))) == NULL) {
 		fprintf(stderr, "%s:%d: Malloc failed -~- can't allocate memory"
-			" for new List_ul\n", __FILE__, __LINE__);
+			" for new List_d\n", __FILE__, __LINE__);
                 exit (EXIT_FAILURE);
         }
         i = sz;
         while (i-- > 0)
-                listul_push (l, items[sz - i - 1]);
+                listd_push (l, items[sz - i - 1]);
 
         return (l);
 }
 
-List_ul *
-listul_cpy (l)
-        List_ul	*l;
+List_d *
+listd_cpy (l)
+        List_d	*l;
 {
-        return (listul_init (l->size, l->data));
+        return (listd_init (l->size, l->data));
 }
 
-List_ul *
-listul_flip (l)
-        List_ul	*l;
+List_d *
+listd_flip (l)
+        List_d	*l;
 {
-        List_ul	*r;
+        List_d	*r;
         size_t  sz;
 
-        r = listul_new ();
+        r = listd_new ();
         sz = l->size;
         r->size = sz;
         r->capacity = sz;
         while (sz-- > 0)
-                listul_push (r, listul_get (l, sz));
+                listd_push (r, listd_get (l, sz));
 
         return (r);
 }
 
 size_t
-listul_len (l)
-        List_ul	*l;
+listd_len (l)
+        List_d	*l;
 {
         return l->size;
 }
 
 size_t
-listul_cap (l)
-        List_ul	*l;
+listd_cap (l)
+        List_d	*l;
 {
         return l->capacity;
 }
 
 void
-listul_push (l, el)
-        List_ul		*l;
-        unsigned long	el;
+listd_push (l, el)
+        List_d	*l;
+        double	el;
 {
         if (l->size == l->capacity)
                 grow (l, 1);
         l->data[l->size++] = el;
 }
 
-unsigned long
-listul_pop (l)
-        List_ul	*l;
+double
+listd_pop (l)
+        List_d	*l;
 {
         td_assert (l->size != 0);
 
         return (l->data[--l->size]);
 }
 
-unsigned long
-listul_get (l, at)
-        List_ul	*l;
+double
+listd_get (l, at)
+        List_d	*l;
         size_t  at;
 {
         td_assert (at < l->size);
@@ -136,28 +136,28 @@ listul_get (l, at)
 }
 
 void
-listul_set (l, at, el)
-        List_ul		*l;
-        size_t		at;
-        unsigned long	el;
+listd_set (l, at, el)
+        List_d	*l;
+        size_t  at;
+        double	el;
 {
         td_assert (at < l->size);
 
         l->data[at] = el;
 }
 
-unsigned long
-listul_front (l)
-        List_ul	*l;
+double
+listd_front (l)
+        List_d	*l;
 {
         td_assert (l->size > 0);
 
         return (l->data[0]);
 }
 
-unsigned long
-listul_tail (l)
-        List_ul	*l;
+double
+listd_tail (l)
+        List_d	*l;
 {
         td_assert (l->size > 0);
 
@@ -165,12 +165,12 @@ listul_tail (l)
 }
 
 void
-listul_remove (l, at)
-        List_ul		*l;
-        size_t		at;
+listd_remove (l, at)
+        List_d	*l;
+        size_t  at;
 {
-        size_t		ofs;
-        unsigned long    *d;
+        size_t  ofs;
+        double    *d;
 
         td_assert (l->size > 0);
         td_assert (at <= l->size);
@@ -185,9 +185,9 @@ listul_remove (l, at)
 }
 
 void
-listul_append (l0, l1)
-        List_ul	*l0;
-        List_ul	*l1;
+listd_append (l0, l1)
+        List_d	*l0;
+        List_d	*l1;
 {
         size_t  sz;
 
@@ -197,21 +197,21 @@ listul_append (l0, l1)
         if (l0->size + sz > l0->capacity)
                 grow (l0, l0->capacity - sz);
         while (sz-- > 0)
-                listul_push (l0, listul_get (l1, l1->size - sz));
+                listd_push (l0, listd_get (l1, l1->size - sz));
 }
 
 void
-listul_del (l)
-        List_ul	*l;
+listd_del (l)
+        List_d	*l;
 {
         free (l->data);
         free (l);
 }
 
 int
-listul_cmp (l0, l1)
-        List_ul	*l0;
-        List_ul	*l1;
+listd_cmp (l0, l1)
+        List_d	*l0;
+        List_d	*l1;
 {
         size_t  sz;
 
@@ -224,9 +224,9 @@ listul_cmp (l0, l1)
 }
 
 int
-listul_ncmp (l0, l1, count)
-        List_ul	*l0;
-        List_ul	*l1;
+listd_ncmp (l0, l1, count)
+        List_d	*l0;
+        List_d	*l1;
         size_t  count;
 {
         td_assert (l0->size >= count);
@@ -240,16 +240,16 @@ listul_ncmp (l0, l1, count)
 }
 
 void
-listul_print (l)
-        List_ul	*l;
+listd_print (l)
+        List_d	*l;
 {
         size_t  sz;
 
         sz = 0;
         printf ("[ ");
         while (sz < l->size) {
-                printf (((sz == l->size - 1) ? "%lu " : "%lu, "),
-                        listul_get (l, sz));
+                printf (((sz == l->size - 1) ? "%f " : "%f, "),
+                        listd_get (l, sz));
                 sz++;
         }
         printf ("]\n");

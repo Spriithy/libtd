@@ -1,11 +1,11 @@
 /*
- * intlist.c
+ * List_f.c
  *
  * This file is part of the libtd project and provided under the MIT License.
  * You can refer to the LICENSE file at repository's root for complete license
  * terms.
  *
- *  Created on: Jan 11, 2016
+ *  Created on: Jan 12, 2016
  *      Author: theophile
  */
 
@@ -14,120 +14,120 @@
 #include <libtd.h>
 
 static void grow (l, dt)
-        List_i	*l;
+        List_f	*l;
         int     dt;
 {
         td_assert (dt > 0);
         if (l->size + dt <= l->capacity)
                 return ;
         l->capacity = l->size + dt;
-	if ((l->data = realloc (l->data, l->capacity * sizeof (int))) == NULL) {
-		fprintf(stderr, "%s:%d: Malloc failed -~- cannot grow current"
-			" List_i\n", __FILE__, __LINE__);
+	if ((l->data = realloc (l->data, l->capacity * sizeof (float))) == NULL) {
+		fprintf(stderr, "%s:%d: Malloc failed -~- cannot grow current "
+			"List_f", __FILE__, __LINE__);
                 exit (EXIT_FAILURE);
         }
 }
 
-List_i *
-listi_new (void)
+List_f *
+listf_new (void)
 {
-        List_i	*l;
+        List_f	*l;
 
-        l = calloc (1, sizeof (List_i));
-        l->capacity = TD_INTLIST_DEFAULT_SIZE;
+        l = calloc (1, sizeof (List_f));
+        l->capacity = TD_FLTLIST_DEFAULT_SIZE;
         l->size = 0;
-	if ((l->data = malloc ((l->capacity + 1) * sizeof (int))) == NULL) {
-		fprintf(stderr, "%s:%d: Malloc failed -~- cannot create new"
-			" List_i\n", __FILE__, __LINE__);
+        if ((l->data = malloc ((l->capacity + 1) * sizeof (float))) == NULL) {
+                fprintf (stderr, "%s:%d: Malloc failed -~- can't allocate memory"
+			" for new List_f\n", __FILE__, __LINE__);
                 exit (EXIT_FAILURE);
         }
 
         return (l);
 }
 
-List_i *
-listi_init (sz, items)
+List_f *
+listf_init (sz, items)
         size_t  sz;
-        int     *items;
+        double	*items;
 {
-        List_i	*l;
+        List_f	*l;
         int     i;
 
-        l = calloc (1, sizeof (List_i));
+        l = calloc (1, sizeof (List_f));
         l->capacity = sz;
         l->size = 0;
-	if ((l->data = malloc (l->capacity * sizeof (int))) == NULL) {
-		fprintf(stderr, "%s:%d: Malloc failed -~- cannot initialize new"
-			" List_i\n", __FILE__, __LINE__);
+	if ((l->data = malloc (l->capacity * sizeof (float))) == NULL) {
+		fprintf(stderr, "%s:%d: Malloc failed -~- can't allocate memory"
+			" for new List_f\n", __FILE__, __LINE__);
                 exit (EXIT_FAILURE);
         }
         i = sz;
         while (i-- > 0)
-                listi_push (l, items[sz - i - 1]);
+                listf_push (l, items[sz - i - 1]);
 
         return (l);
 }
 
-List_i *
-listi_cpy (l)
-        List_i	*l;
+List_f *
+listf_cpy (l)
+        List_f	*l;
 {
-        return (listi_init (l->size, l->data));
+        return (listf_init (l->size, (double *) l->data));
 }
 
-List_i *
-listi_flip (l)
-        List_i	*l;
+List_f *
+listf_flip (l)
+        List_f	*l;
 {
-        List_i	*r;
+        List_f	*r;
         size_t  sz;
 
-        r = listi_new ();
+        r = listf_new ();
         sz = l->size;
         r->size = sz;
         r->capacity = sz;
         while (sz-- > 0)
-                listi_push (r, listi_get (l, sz));
+                listf_push (r, listf_get (l, sz));
 
         return (r);
 }
 
 size_t
-listi_len (l)
-        List_i	*l;
+listf_len (l)
+        List_f	*l;
 {
         return l->size;
 }
 
 size_t
-listi_cap (l)
-        List_i	*l;
+listf_cap (l)
+        List_f	*l;
 {
         return l->capacity;
 }
 
 void
-listi_push (l, el)
-        List_i	*l;
-        int     el;
+listf_push (l, el)
+        List_f	*l;
+        double	el;
 {
         if (l->size == l->capacity)
                 grow (l, 1);
-        l->data[l->size++] = el;
+        l->data[l->size++] = (float) el;
 }
 
-int
-listi_pop (l)
-        List_i	*l;
+float
+listf_pop (l)
+        List_f	*l;
 {
         td_assert (l->size != 0);
 
         return (l->data[--l->size]);
 }
 
-int
-listi_get (l, at)
-        List_i	*l;
+float
+listf_get (l, at)
+        List_f	*l;
         size_t  at;
 {
         td_assert (at < l->size);
@@ -136,28 +136,28 @@ listi_get (l, at)
 }
 
 void
-listi_set (l, at, el)
-        List_i	*l;
+listf_set (l, at, el)
+        List_f	*l;
         size_t  at;
-        int     el;
+        double	el;
 {
         td_assert (at < l->size);
 
-        l->data[at] = el;
+        l->data[at] = (float) el;
 }
 
-int
-listi_front (l)
-        List_i	*l;
+float
+listf_front (l)
+        List_f	*l;
 {
         td_assert (l->size > 0);
 
         return (l->data[0]);
 }
 
-int
-listi_tail (l)
-        List_i	*l;
+float
+listf_tail (l)
+        List_f	*l;
 {
         td_assert (l->size > 0);
 
@@ -165,12 +165,12 @@ listi_tail (l)
 }
 
 void
-listi_remove (l, at)
-        List_i	*l;
+listf_remove (l, at)
+        List_f	*l;
         size_t  at;
 {
         size_t  ofs;
-        int     *d;
+        float    *d;
 
         td_assert (l->size > 0);
         td_assert (at <= l->size);
@@ -185,9 +185,9 @@ listi_remove (l, at)
 }
 
 void
-listi_append (l0, l1)
-        List_i	*l0;
-        List_i	*l1;
+listf_append (l0, l1)
+        List_f	*l0;
+        List_f	*l1;
 {
         size_t  sz;
 
@@ -197,21 +197,21 @@ listi_append (l0, l1)
         if (l0->size + sz > l0->capacity)
                 grow (l0, l0->capacity - sz);
         while (sz-- > 0)
-                listi_push (l0, listi_get (l1, l1->size - sz));
+                listf_push (l0, listf_get (l1, l1->size - sz));
 }
 
 void
-listi_del (l)
-        List_i	*l;
+listf_del (l)
+        List_f	*l;
 {
         free (l->data);
         free (l);
 }
 
 int
-listi_cmp (l0, l1)
-        List_i	*l0;
-        List_i	*l1;
+listf_cmp (l0, l1)
+        List_f	*l0;
+        List_f	*l1;
 {
         size_t  sz;
 
@@ -224,9 +224,9 @@ listi_cmp (l0, l1)
 }
 
 int
-listi_ncmp (l0, l1, count)
-        List_i	*l0;
-        List_i	*l1;
+listf_ncmp (l0, l1, count)
+        List_f	*l0;
+        List_f	*l1;
         size_t  count;
 {
         td_assert (l0->size >= count);
@@ -240,17 +240,17 @@ listi_ncmp (l0, l1, count)
 }
 
 void
-listi_print (l)
-        List_i	*l;
+listf_print (l)
+        List_f	*l;
 {
         size_t  sz;
 
         sz = 0;
-        printf("[ ");
+        printf ("[ ");
         while (sz < l->size) {
-                printf (((sz == l->size - 1) ? "%d " : "%d, "),
-                        listi_get (l, sz));
+                printf (((sz == l->size - 1) ? "%f " : "%f, "),
+                        listf_get (l, sz));
                 sz++;
         }
-        printf("]\n");
+        printf ("]\n");
 }

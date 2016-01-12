@@ -22,17 +22,18 @@
 #include "td/assert.h"
 
 /* Headers relative to lists */
-#include "td/list.h"
+#include "td/List.h"
 #include "td/list/List_c.h"
-#include "td/list/List_i.h"
-#include "td/list/List_f.h"
 #include "td/list/List_d.h"
-#include "td/list/List_s.h"
+#include "td/list/List_f.h"
+#include "td/list/List_i.h"
 #include "td/list/List_l.h"
+#include "td/list/List_s.h"
 #include "td/list/List_ul.h"
 
-/* Headers relative to maps */
-#include "td/map.h"
+/* Headers relative to Dictionaries */
+#include "td/Dict.h"
+#include "td/map/Dict_i.h"
 
 /* Include math-related headers */
 #include "td/math.h"
