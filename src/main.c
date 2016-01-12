@@ -26,7 +26,7 @@ main (void)
         while (i < 16)
         {       intlist_push (il, i);
                 chrlist_push (cl, 'a' + i);
-                ++i;
+                i++;
         }
 
         strlist_push (sl, "Foo");
@@ -34,16 +34,16 @@ main (void)
         strlist_push (sl, "Baz");
 
         intlist_print (il);
-        intlist_remove (il, 15); /* remove 6 ? */
+        intlist_remove (il, 15);
         intlist_print (il);
 
         strlist_print (sl);
         strlist_remove (sl, 0);
         strlist_print (sl);
 
-        chrlist_print (cl);
-        chrlist_remove (cl, 13);
-        chrlist_print (cl);
+        chrlist_print	(cl);
+        chrlist_remove	(cl, 13);
+        chrlist_print	(cl);
 
         strList *slc = strlist_cpy (sl);
         strlist_print (slc);

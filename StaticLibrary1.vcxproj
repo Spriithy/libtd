@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\td\ascii.h" />
+    <ClInclude Include="include\td\assert.h" />
+    <ClInclude Include="include\td\chrList.h" />
+    <ClInclude Include="include\td\intList.h" />
+    <ClInclude Include="include\td\list.h" />
+    <ClInclude Include="include\td\math.h" />
+    <ClInclude Include="include\td\mem.h" />
+    <ClInclude Include="include\td\string.h" />
+    <ClInclude Include="include\td\strList.h" />
+    <ClInclude Include="include\td\tdef.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\ascii\td_digittoint.c" />
+    <ClCompile Include="src\ascii\td_isalnum.c" />
+    <ClCompile Include="src\ascii\td_isalpha.c" />
+    <ClCompile Include="src\ascii\td_isascii.c" />
+    <ClCompile Include="src\ascii\td_isblank.c" />
+    <ClCompile Include="src\ascii\td_iscntrl.c" />
+    <ClCompile Include="src\ascii\td_isdigit.c" />
+    <ClCompile Include="src\lists\chrlist.c" />
+    <ClCompile Include="src\lists\intlist.c" />
+    <ClCompile Include="src\lists\strlist.c" />
+    <ClCompile Include="src\main.c" />
+    <ClCompile Include="src\math\td_abs.c" />
+    <ClCompile Include="src\mem\td_bcmp.c" />
+    <ClCompile Include="src\mem\td_bcopy.c" />
+    <ClCompile Include="src\mem\td_bzero.c" />
+    <ClCompile Include="src\string\td_memccpy.c" />
+    <ClCompile Include="src\string\td_memchr.c" />
+    <ClCompile Include="src\string\td_memcmp.c" />
+    <ClCompile Include="src\string\td_memcpy.c" />
+    <ClCompile Include="src\string\td_memmove.c" />
+    <ClCompile Include="src\string\td_memset.c" />
+    <ClCompile Include="src\string\td_strdup.c" />
+    <ClCompile Include="src\string\td_streq.c" />
+    <ClCompile Include="src\string\td_strlen.c" />
+    <ClCompile Include="src\string\td_strndup.c" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{555dc2d8-bff3-44b7-9c1e-1417032169ee}</ProjectGuid>
+    <Keyword>Clang</Keyword>
+    <RootNamespace>StaticLibrary1</RootNamespace>
+    <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
+    <ProjectName>libtd</ProjectName>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140_clang_3_7</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140_clang_3_7</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140_Clang_3_7</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140_Clang_3_7</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <IncludePath>$(VCClangInstallDir)include;$(VC_IncludePath);$(WindowsSDK_IncludePath);$(ProjectDir)/include;</IncludePath>
+    <TargetName>main</TargetName>
+    <TargetExt>.exe</TargetExt>
+    <OutDir>.\Debug\libtd</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <IncludePath>$(VCClangInstallDir)include;$(VC_IncludePath);$(WindowsSDK_IncludePath);$(ProjectDir)/include;</IncludePath>
+    <TargetName>main</TargetName>
+    <TargetExt>.exe</TargetExt>
+    <OutDir>.\Debug\libtd</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <IncludePath>$(VCClangInstallDir)include;$(VC_IncludePath);$(WindowsSDK_IncludePath);$(ProjectDir)/include;</IncludePath>
+    <TargetName>main</TargetName>
+    <TargetExt>.exe</TargetExt>
+    <OutDir>.\Debug\libtd</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <IncludePath>$(VCClangInstallDir)include;$(VC_IncludePath);$(WindowsSDK_IncludePath);$(ProjectDir)/include;</IncludePath>
+    <TargetName>main</TargetName>
+    <TargetExt>.exe</TargetExt>
+    <OutDir>.\Debug\libtd</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <ExceptionHandling>Disabled</ExceptionHandling>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <CLanguageStandard Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">c99</CLanguageStandard>
+      <CppLanguageStandard Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">c++11</CppLanguageStandard>
+      <CLanguageStandard Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">c99</CLanguageStandard>
+      <CppLanguageStandard Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">c++11</CppLanguageStandard>
+      <CLanguageStandard Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">c99</CLanguageStandard>
+      <CppLanguageStandard Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">c++11</CppLanguageStandard>
+      <CLanguageStandard Condition="'$(Configuration)|$(Platform)'=='Release|x64'">c99</CLanguageStandard>
+      <CppLanguageStandard Condition="'$(Configuration)|$(Platform)'=='Release|x64'">c++11</CppLanguageStandard>
+      <MSExtensions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</MSExtensions>
+      <MSExtensions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</MSExtensions>
+      <MSExtensions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</MSExtensions>
+      <MSExtensions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</MSExtensions>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
+      <EnablePREfast Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</EnablePREfast>
+      <EnablePREfast Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</EnablePREfast>
+      <EnablePREfast Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</EnablePREfast>
+      <EnablePREfast Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</EnablePREfast>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+      <PrecompiledHeaderCompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsC</PrecompiledHeaderCompileAs>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+      <PrecompiledHeaderCompileAs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">CompileAsC</PrecompiledHeaderCompileAs>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+      <PrecompiledHeaderCompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</PrecompiledHeaderCompileAs>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+      <PrecompiledHeaderCompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</PrecompiledHeaderCompileAs>
+      <BufferSecurityCheck Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</BufferSecurityCheck>
+      <PrecompiledHeaderOutputFileDirectory Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+      <BufferSecurityCheck Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</BufferSecurityCheck>
+      <PrecompiledHeaderOutputFileDirectory Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+      <BufferSecurityCheck Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</BufferSecurityCheck>
+      <PrecompiledHeaderOutputFileDirectory Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+      <BufferSecurityCheck Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</BufferSecurityCheck>
+      <PrecompiledHeaderOutputFileDirectory Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>
