@@ -24,12 +24,6 @@
     <ClInclude Include="include\td\assert.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\td\chrList.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\td\intList.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\td\list.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -42,7 +36,31 @@
     <ClInclude Include="include\td\string.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\td\strList.h">
+    <ClInclude Include="include\libtd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\td\map.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\td\list\List_ul.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\td\list\List_c.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\td\list\List_d.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\td\list\List_f.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\td\list\List_i.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\td\list\List_l.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\td\list\List_s.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -89,15 +107,6 @@
     <ClCompile Include="src\math\td_abs.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\lists\chrlist.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\lists\intlist.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\lists\strlist.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\ascii\td_digittoint.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -120,6 +129,27 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\main.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\list\chrlist.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\list\dbllist.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\list\fltlist.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\list\intlist.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\list\lnglist.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\list\strlist.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\list\ullist.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

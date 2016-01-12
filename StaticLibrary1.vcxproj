@@ -19,15 +19,21 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\libtd.h" />
     <ClInclude Include="include\td\ascii.h" />
     <ClInclude Include="include\td\assert.h" />
-    <ClInclude Include="include\td\chrList.h" />
-    <ClInclude Include="include\td\intList.h" />
+    <ClInclude Include="include\td\list\List_c.h" />
+    <ClInclude Include="include\td\list\List_d.h" />
+    <ClInclude Include="include\td\list\List_f.h" />
+    <ClInclude Include="include\td\list\List_i.h" />
     <ClInclude Include="include\td\list.h" />
+    <ClInclude Include="include\td\list\List_l.h" />
+    <ClInclude Include="include\td\list\List_ul.h" />
+    <ClInclude Include="include\td\map.h" />
     <ClInclude Include="include\td\math.h" />
     <ClInclude Include="include\td\mem.h" />
     <ClInclude Include="include\td\string.h" />
-    <ClInclude Include="include\td\strList.h" />
+    <ClInclude Include="include\td\list\List_s.h" />
     <ClInclude Include="include\td\tdef.h" />
   </ItemGroup>
   <ItemGroup>
@@ -38,9 +44,13 @@
     <ClCompile Include="src\ascii\td_isblank.c" />
     <ClCompile Include="src\ascii\td_iscntrl.c" />
     <ClCompile Include="src\ascii\td_isdigit.c" />
-    <ClCompile Include="src\lists\chrlist.c" />
-    <ClCompile Include="src\lists\intlist.c" />
-    <ClCompile Include="src\lists\strlist.c" />
+    <ClCompile Include="src\list\chrlist.c" />
+    <ClCompile Include="src\list\dbllist.c" />
+    <ClCompile Include="src\list\fltlist.c" />
+    <ClCompile Include="src\list\intlist.c" />
+    <ClCompile Include="src\list\lnglist.c" />
+    <ClCompile Include="src\list\strlist.c" />
+    <ClCompile Include="src\list\ullist.c" />
     <ClCompile Include="src\main.c" />
     <ClCompile Include="src\math\td_abs.c" />
     <ClCompile Include="src\mem\td_bcmp.c" />
