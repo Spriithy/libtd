@@ -9,8 +9,7 @@
  *      Author: theophile
  */
 
-#include <td/string.h>
-#include <td/mem.h>
+#include <libtd.h>
 
 void *
 td_memcpy (dst, src, count)

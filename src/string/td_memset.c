@@ -9,7 +9,7 @@
  *      Author: theophile
  */
 
-#include <td/string.h>
+#include <libtd.h>
 
 void *
 td_memset (ptr, c, count)

@@ -12,7 +12,7 @@
 #ifndef _TD_STRING_H_
 #define _TD_STRING_H_
 
-#include <td/tdef.h>
+#include <libtd.h>
 
 /* memory management functions */
 void	*td_memset	(void *ptr, int c, size_t count);

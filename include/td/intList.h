@@ -5,15 +5,14 @@
  * You can refer to the LICENSE file at repository's root for complete license
  * terms.
  *
- *  Created on: 11 janv. 2016
+ *  Created on: 11 Jan. 2016
  *      Author: theophile
  */
 
 #ifndef _TD_NLIST_H_
 #define _TD_NLIST_H_
 
-#include <td/tdef.h>
-#include "list.h"
+#include <libtd.h>
 
 intList *intlist_new     (void);
 intList *intlist_init    (size_t sz, int *items);

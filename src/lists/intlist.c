@@ -11,11 +11,11 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include <td/tdef.h>
-#include <td/mem.h>
-#include <td/assert.h>
-#include <td/intList.h>
+#include <libtd.h>
 
+/*
+ * Try
+ */
 static void grow (l, dt)
         intList *l;
         int     dt;
@@ -24,8 +24,9 @@ static void grow (l, dt)
         if (l->size + dt <= l->capacity)
                 return ;
         l->capacity = l->size + dt;
-        if ((l->data = realloc (l->data, l->capacity * sizeof (int))) == NULL) {
-                fprintf (stderr, "Malloc failed -~- \n");
+	if ((l->data = realloc (l->data, l->capacity * sizeof(int))) == NULL) {
+		fprintf(stderr, "%s:%d: Malloc failed -~- cannot grow current "
+			"intList\n", __FILE__, __LINE__);
                 exit (EXIT_FAILURE);
         }
 }
@@ -38,8 +39,9 @@ intlist_new (void)
         l = calloc (1, sizeof (intList));
         l->capacity = TD_INTLIST_DEFAULT_SIZE;
         l->size = 0;
-        if ((l->data = malloc ((l->capacity + 1) * sizeof (int))) == NULL) {
-                fprintf (stderr, "Malloc failed -~- \n");
+	if ((l->data = malloc ((l->capacity + 1) * sizeof(int))) == NULL) {
+		fprintf(stderr, "%s:%d: Malloc failed -~- can't allocate memory"
+			" for new chrList\n", __FILE__, __LINE__);
                 exit (EXIT_FAILURE);
         }
 
@@ -57,8 +59,9 @@ intlist_init (sz, items)
         l = calloc (1, sizeof (intList));
         l->capacity = sz;
         l->size = 0;
-        if ((l->data = malloc (l->capacity * sizeof (int))) == NULL) {
-                fprintf (stderr, "Malloc failed -~- \n");
+	if ((l->data = malloc (l->capacity * sizeof(int))) == NULL) {
+		fprintf(stderr, "%s:%d: Malloc failed -~- can't allocate memory"
+			" for new chrList\n", __FILE__, __LINE__);
                 exit (EXIT_FAILURE);
         }
         i = sz;

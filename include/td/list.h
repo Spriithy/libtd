@@ -9,7 +9,7 @@
  *      Author: theophile
  */
 
-#include <td/tdef.h>
+#include <libtd.h>
 
 #ifndef _TD_LIST_H_
 #define _TD_LIST_H_

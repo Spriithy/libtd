@@ -11,11 +11,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include <td/tdef.h>
-#include <td/mem.h>
-#include <td/string.h>
-#include <td/assert.h>
-#include <td/strList.h>
+#include <libtd.h>
 
 static void grow (l, dt)
         strList *l;

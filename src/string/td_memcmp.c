@@ -5,12 +5,11 @@
  * You can refer to the LICENSE file at repository's root for complete license
  * terms.
  *
- *  Created on: 9 janv. 2016
+ *  Created on: 9 Jan. 2016
  *      Author: theophile
  */
 
-#include <td/string.h>
-#include <td/tdef.h>
+#include <libtd.h>
 
 int
 td_memcmp (s1, s2, count)

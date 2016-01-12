@@ -11,9 +11,7 @@
 
 #include <stdio.h>
 #include <stdio.h>
-#include <td/strList.h>
-#include <td/chrList.h>
-#include <td/intList.h>
+#include <libtd.h>
 
 int
 main (void)
@@ -49,9 +47,9 @@ main (void)
         strlist_print (slc);
 
         printf ("%d %d %d\n",
-        intlist_cmp (il, il),
-        chrlist_cmp (cl, cl),
-        strlist_cmp (sl, slc));
+		intlist_cmp (il, il),
+		chrlist_cmp (cl, cl),
+		strlist_cmp (sl, slc));
 
         intlist_del (il);
         strlist_del (slc);

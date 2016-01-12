@@ -5,7 +5,7 @@
  * You can refer to the LICENSE file at repository's root for complete license
  * terms.
  *
- *  Created on: 11 janv. 2016
+ *  Created on: 11 Jan. 2016
  *      Author: theophile
  */
 
