@@ -16,9 +16,15 @@
 #define	TD_NULL ((void *) 0)
 
 #ifndef _SIZE_T_DEFINED
-typedef unsigned long	size_t;
+typedef unsigned long long	size_t;
 # define _SIZE_T_DEFINED
 # define _SIZE_T
 #endif /* _SIZE_T_DEFINED */
+
+#ifndef _HASH_T_DEFINED
+typedef unsigned long long	hash_t;
+# define _HASH_T_DEFINED
+# define _HASH_T
+#endif /* _HASH_T_DEFINED */
 
 #endif  /* _TD_DEF_H_ */
