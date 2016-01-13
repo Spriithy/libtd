@@ -15,15 +15,15 @@
 #include <libtd.h>
 
 Dict_i	*dicti_new	(void);
-Dict_i	*dicti_Linit	(const List_s *keys, const List_i *values);
-Dict_i	*dicti_Ainit	(const char *keys, const int *values);
+Dict_i	*dicti_Linit	(List_s *keys, List_i *values);
+Dict_i	*dicti_Ainit	(char **keys, int *values, size_t sz);
 Dict_i	*dicti_cpy	(Dict_i *m);
 void	 dicti_merge	(Dict_i *dst, const Dict_i *src);
 size_t	 dicti_len	(Dict_i *m);
 size_t	 dicti_cap	(Dict_i *m);
 size_t	 dicti_posof	(Dict_i *m, const char *key);
 int	 dicti_contains	(Dict_i *m, const char *key);
-void	 dicti_add	(Dict_i *m, const char *key, const int val);
+void	 dicti_add	(Dict_i *m, char *key, int val);
 void	 dicti_set	(Dict_i *m, const char *key, const int val);
 int	 dicti_get	(Dict_i *m, const char *key);
 List_s	*dicti_keys	(Dict_i *m);

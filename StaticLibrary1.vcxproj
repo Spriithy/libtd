@@ -47,6 +47,7 @@
     <ClCompile Include="src\ascii\td_isdigit.c" />
     <ClCompile Include="src\list\List_c.c" />
     <ClCompile Include="src\list\List-d.c" />
+    <ClCompile Include="src\list\List_d.c" />
     <ClCompile Include="src\list\List_f.c" />
     <ClCompile Include="src\list\List_i.c" />
     <ClCompile Include="src\list\List_l.c" />

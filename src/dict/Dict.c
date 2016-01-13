@@ -22,7 +22,7 @@ __djb2 (key)
 	int	c;
 	
 	hash = __DJB2_HASH;
-	while (c = *key++)
+	while ((c = *key++))
 		hash = ((hash << 5) + hash) + c;
 
 	return (hash);

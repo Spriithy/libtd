@@ -161,5 +161,8 @@
     <ClCompile Include="src\dict\Dict_i.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\list\List_d.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

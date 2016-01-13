@@ -16,11 +16,12 @@
 int
 main (void)
 {
-	List_d	*ld = listd_new ();
-	for (double d = 0.1; d < 0.5; d += 0.05)
-		listd_push (ld, d);
-	printf ("size : %d\n", listd_len (ld));
-	listd_print (ld);
+	Dict_i *di = dicti_new ();
+	printf ("%d ~ ", dicti_len (di));
+	dicti_add (di, "Foo", 10);
+	dicti_add (di, "Foo", 10);
+	printf ("%d -- ", dicti_cap (di));
+	dicti_print (di);
 
         return (0);
 }

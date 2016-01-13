@@ -33,7 +33,7 @@
 
 /* Headers relative to Dictionaries */
 #include "td/Dict.h"
-#include "td/map/Dict_i.h"
+#include "td/dict/Dict_i.h"
 
 /* Include math-related headers */
 #include "td/math.h"
