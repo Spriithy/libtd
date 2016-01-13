@@ -17,10 +17,11 @@ int
 main (void)
 {
 	Dict_i *di = dicti_new ();
-	printf ("%d ~ ", dicti_len (di));
 	dicti_add (di, "Foo", 10);
-	dicti_add (di, "Foo", 10);
-	printf ("%d -- ", dicti_cap (di));
+	dicti_add (di, "Bar", 11);
+	dicti_add (di, "Baz", 12);
+	dicti_print (di);
+	dicti_remove (di, "Bar");
 	dicti_print (di);
 
         return (0);
