@@ -21,8 +21,11 @@ main (void)
 	dicti_add (di, "Bar", 11);
 	dicti_add (di, "Baz", 12);
 	dicti_print (di);
+	printf ("%d\n", dicti_posof (di, "Bar"));
 	dicti_remove (di, "Bar");
 	dicti_print (di);
-
+	printf ("%d\n",  dicti_get (di, "Baz"));
+	dicti_del (di);
+	
         return (0);
 }

@@ -3,3 +3,5 @@ ctd
 Debug/
 Libtd.VC.opendb
 *.suo
+
+main

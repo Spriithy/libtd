@@ -15,11 +15,12 @@
 #undef  TD_NULL
 #define	TD_NULL ((void *) 0)
 
-#ifndef _SIZE_T_DEFINED
+#if  !defined (_SIZE_T_DEFINED) && !defined (__SIZE_TYPE__)
 typedef unsigned long long	size_t;
-# define _SIZE_T_DEFINED
-# define _SIZE_T
-#endif /* _SIZE_T_DEFINED */
+#  define _SIZE_T_DEFINED
+#  define __SIZE_TYPE__
+#  define _SIZE_T
+#endif /* !_SIZE_T_DEFINED && !__SIZE_TYPE__ */
 
 #ifndef _HASH_T_DEFINED
 typedef unsigned long long	hash_t;

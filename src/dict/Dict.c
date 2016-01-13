@@ -11,16 +11,16 @@
 
 #include <libtd.h>
 
-/* Credits to Dan Bernstein for the DJB2 hash algorithm used here 
+/* Credits to Dan Bernstein for the DJB2 hash algorithm used here
  * See http://www.cse.yorku.ca/~oz/hash.html for further informations
  */
-static const hash_t
+static hash_t
 __djb2 (key)
 	unsigned char	*key;
 {
 	hash_t	hash;
 	int	c;
-	
+
 	hash = __DJB2_HASH;
 	while ((c = *key++))
 		hash = ((hash << 5) + hash) + c;
@@ -28,14 +28,14 @@ __djb2 (key)
 	return (hash);
 }
 
-const hash_t
+hash_t
 td_map_hash (key)
 	const unsigned char	*key;
 {
 	return (__djb2 (key));
 }
 
-const int
+int
 td_map_heq (h0, h1)
 	const hash_t	h0;
 	const hash_t	h1;
