@@ -26,6 +26,6 @@ main (void)
 	dicti_print (di);
 	printf ("%d\n",  dicti_get (di, "Baz"));
 	dicti_del (di);
-	
+
         return (0);
 }

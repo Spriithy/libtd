@@ -18,7 +18,7 @@ Dict_i	*dicti_new	(void);
 Dict_i	*dicti_Linit	(List_s *keys, List_i *values);
 Dict_i	*dicti_Ainit	(char **keys, int *values, size_t sz);
 Dict_i	*dicti_cpy	(Dict_i *m);
-void	 dicti_merge	(Dict_i *dst, const Dict_i *src);
+void	 dicti_merge	(Dict_i *dst, const Dict_i *src);     // TODO
 size_t	 dicti_len	(Dict_i *m);
 size_t	 dicti_cap	(Dict_i *m);
 size_t	 dicti_posof	(Dict_i *m, const char *key);
