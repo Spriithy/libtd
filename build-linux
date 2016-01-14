@@ -1,1 +1,2 @@
+install.sh /usr/include
 clang -std=c99 -Wall -Wextra -Iinclude/ src/*.c src/*/*.c -o main

@@ -16,16 +16,11 @@
 int
 main (void)
 {
-	Dict_i *di = dicti_new ();
-	dicti_add (di, "Foo", 10);
-	dicti_add (di, "Bar", 11);
-	dicti_add (di, "Baz", 12);
-	dicti_print (di);
-	printf ("%d\n", dicti_posof (di, "Bar"));
-	dicti_remove (di, "Bar");
-	dicti_print (di);
-	printf ("%d\n",  dicti_get (di, "Baz"));
-	dicti_del (di);
+	lists_print (td_strsplit("Foo Bar Baz"));
+	char	*str = "Foo Bar Baz j'te met une base";
+	printf ("<%s>\n", str);
 
+	td_strtoupper (str);
+	
         return (0);
 }

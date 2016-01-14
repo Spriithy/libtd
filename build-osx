@@ -1,0 +1,5 @@
+echo "installing header files ...."
+./install.sh /usr/local/Cellar/libtd
+echo "now building sources ...."
+clang -std=c99 -Wall -Wextra -Iinclude/ src/*.c src/*/*.c -o main
+echo "build successful !"

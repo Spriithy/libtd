@@ -202,7 +202,7 @@ dicti_set (m, key, val)
 
 	d = 0;
 	if (!dicti_contains (m, key)) {
-		fprintf (stderr, "Couldn't resolve \"%s\" as an existing key in " 
+		fprintf (stderr, "Couldn't resolve \"%s\" as an existing key in "
 			"the given Dict_i.\n", key);
 		dicti_print (m);
 		exit (EXIT_FAILURE);
@@ -254,8 +254,7 @@ dicti_remove (m, key)
 	Dict_i		*m;
 	const char	*key;
 {
-	size_t		ofs;
-	size_t		at;
+	size_t		ofs, at;
 	char		**d;
 	int		*v;
 

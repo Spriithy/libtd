@@ -14,6 +14,11 @@
 
 #include <libtd.h>
 
+#ifndef __TD_SPLIT_TOK_SIZE
+# define __TD_SPLIT_TOK_SIZE	(1 << 5)
+# define __td_tok_size		__TD_SPLIT_TOK_SIZE
+#endif
+
 /* memory management functions */
 void	*td_memset	(void *ptr, int c, size_t count);
 void	*td_memcpy	(void *dst, const void *src, size_t count);
@@ -36,11 +41,17 @@ size_t	 td_strlcpy	(char *dst, const char *src, size_t len);
 size_t	 td_strlcat	(char *dst, const char *src, size_t len);
 char	*td_strchr	(const char *s, int c);
 char	*td_strrchr	(const char *s, int c);
+char	*td_strtoupper	(char *s);
+char	*td_strtolower	(char *s);
 char	*td_strstr	(const char *big, const char *little);
 char	*td_strcasestr	(const char *big, const char *little);
 char	*td_strnstr	(const char *big, const char *little, size_t len);
 int 	 td_streq	(const char *s1, const char *s2);
 int 	 td_strcmp	(const char *s1, const char *s2);
 int 	 td_strncmp	(const char *s1, const char *s2, size_t len);
+
+List_s	*td_strsplit	(const char *str);
+List_s	*td_strcsplit	(const char *str, int del);
+List_s	*td_strssplit	(const char *str, const char *del);
 
 #endif /* _TD_STRING_H_ */

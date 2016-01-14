@@ -248,7 +248,8 @@ listl_print (l)
         sz = 0;
         printf ("[ ");
         while (sz < l->size) {
-                printf (((sz == l->size - 1) ? "%l " : "%l, "),
+		// Format : Long Digit
+                printf (((sz == l->size - 1) ? "%ld " : "%ld, "),
                         listl_get (l, sz));
                 sz++;
         }

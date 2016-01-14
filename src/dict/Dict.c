@@ -30,7 +30,7 @@ __djb2 (key)
 
 hash_t
 td_map_hash (key)
-	const unsigned char	*key;
+	unsigned char	*key;
 {
 	return (__djb2 (key));
 }
@@ -40,5 +40,5 @@ td_map_heq (h0, h1)
 	const hash_t	h0;
 	const hash_t	h1;
 {
-	return (__djb2 (h0) == __djb2 (h1));
+	return (h0 == h1);
 }
